@@ -1,4 +1,5 @@
-module Svg.Keyed exposing ( node )
+module Svg.Keyed exposing (node)
+
 {-| A keyed node helps optimize cases where children are getting added, moved,
 removed, etc. Common examples include:
 
@@ -15,7 +16,7 @@ efficiently.
 
 -}
 
-
+import Json.Encode as Json
 import Svg exposing (Attribute, Svg)
 import VirtualDom
 
@@ -26,5 +27,10 @@ nodes, removing nodes, etc. In these cases, the unique identifiers help make
 the DOM modifications more efficient.
 -}
 node : String -> List (Attribute msg) -> List ( String, Svg msg ) -> Svg msg
-node =
-  VirtualDom.keyedNode
+node name attributes =
+    VirtualDom.keyedNode name (svgNamespace :: attributes)
+
+
+svgNamespace : Attribute msg
+svgNamespace =
+    VirtualDom.property "namespace" (Json.string "http://www.w3.org/2000/svg")
