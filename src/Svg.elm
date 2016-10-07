@@ -221,7 +221,7 @@ mask =
 {-|-}
 missingGlyph : List (Attribute msg) -> List (Svg msg) -> Svg msg
 missingGlyph =
-  node "missingGlyph"
+  node "missing-glyph"
 
 
 {-|-}
@@ -407,31 +407,31 @@ font =
 {-|-}
 fontFace : List (Attribute msg) -> List (Svg msg) -> Svg msg
 fontFace =
-  node "fontFace"
+  node "font-face"
 
 
 {-|-}
 fontFaceFormat : List (Attribute msg) -> List (Svg msg) -> Svg msg
 fontFaceFormat =
-  node "fontFaceFormat"
+  node "font-face-format"
 
 
 {-|-}
 fontFaceName : List (Attribute msg) -> List (Svg msg) -> Svg msg
 fontFaceName =
-  node "fontFaceName"
+  node "font-face-name"
 
 
 {-|-}
 fontFaceSrc : List (Attribute msg) -> List (Svg msg) -> Svg msg
 fontFaceSrc =
-  node "fontFaceSrc"
+  node "font-face-src"
 
 
 {-|-}
 fontFaceUri : List (Attribute msg) -> List (Svg msg) -> Svg msg
 fontFaceUri =
-  node "fontFaceUri"
+  node "font-face-uri"
 
 
 {-|-}
