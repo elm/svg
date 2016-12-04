@@ -1,6 +1,6 @@
 # SVG in Elm
 
-Use SVG in Elm.
+Use SVG in Elm. Please see the [API Documentation](http://package.elm-lang.org/packages/elm-lang/svg/latest) for details.
 
 This library is built on [elm-lang/virtual-dom](http://package.elm-lang.org/packages/elm-lang/virtual-dom/latest/) which handles the dirty details of rendering things quickly.
 
