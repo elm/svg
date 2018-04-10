@@ -2,17 +2,17 @@ module Svg.Attributes exposing
   ( accentHeight, accelerate, accumulate, additive, alphabetic, allowReorder
   , amplitude, arabicForm, ascent, attributeName, attributeType, autoReverse
   , azimuth, baseFrequency, baseProfile, bbox, begin, bias, by, calcMode
-  , capHeight, class, clipPathUnits, contentScriptType, contentStyleType, cx, cy
-  , d, decelerate, descent, diffuseConstant, divisor, dur, dx, dy, edgeMode
-  , elevation, end, exponent, externalResourcesRequired, filterRes, filterUnits
-  , format, from, fx, fy, g1, g2, glyphName, glyphRef, gradientTransform
-  , gradientUnits, hanging, height, horizAdvX, horizOriginX, horizOriginY, id
-  , ideographic, in_, in2, intercept, k, k1, k2, k3, k4, kernelMatrix
-  , kernelUnitLength, keyPoints, keySplines, keyTimes, lang, lengthAdjust
-  , limitingConeAngle, local, markerHeight, markerUnits, markerWidth
-  , maskContentUnits, maskUnits, mathematical, max, media, method, min, mode
-  , name, numOctaves, offset, operator, order, orient, orientation, origin
-  , overlinePosition, overlineThickness, panose1, path, pathLength
+  , capHeight, class, classList, clipPathUnits, contentScriptType
+  , contentStyleType, cx, cy , d, decelerate, descent, diffuseConstant, divisor
+  , dur, dx, dy, edgeMode , elevation, end, exponent, externalResourcesRequired
+  , filterRes, filterUnits, format, from, fx, fy, g1, g2, glyphName, glyphRef
+  , gradientTransform, gradientUnits, hanging, height, horizAdvX, horizOriginX
+  , horizOriginY, id, ideographic, in_, in2, intercept, k, k1, k2, k3, k4
+  , kernelMatrix, kernelUnitLength, keyPoints, keySplines, keyTimes, lang
+  , lengthAdjust, limitingConeAngle, local, markerHeight, markerUnits
+  , markerWidth, maskContentUnits, maskUnits, mathematical, max, media, method
+  , min, mode, name, numOctaves, offset, operator, order, orient, orientation
+  , origin, overlinePosition, overlineThickness, panose1, path, pathLength
   , patternContentUnits, patternTransform, patternUnits, pointOrder, points
   , pointsAtX, pointsAtY, pointsAtZ, preserveAlpha, preserveAspectRatio
   , primitiveUnits, r, radius, refX, refY, renderingIntent, repeatCount
@@ -48,17 +48,17 @@ module Svg.Attributes exposing
 @docs accentHeight, accelerate, accumulate, additive, alphabetic, allowReorder,
   amplitude, arabicForm, ascent, attributeName, attributeType, autoReverse,
   azimuth, baseFrequency, baseProfile, bbox, begin, bias, by, calcMode,
-  capHeight, class, clipPathUnits, contentScriptType, contentStyleType, cx, cy,
-  d, decelerate, descent, diffuseConstant, divisor, dur, dx, dy, edgeMode,
-  elevation, end, exponent, externalResourcesRequired, filterRes, filterUnits,
-  format, from, fx, fy, g1, g2, glyphName, glyphRef, gradientTransform,
-  gradientUnits, hanging, height, horizAdvX, horizOriginX, horizOriginY, id,
-  ideographic, in_, in2, intercept, k, k1, k2, k3, k4, kernelMatrix,
-  kernelUnitLength, keyPoints, keySplines, keyTimes, lang, lengthAdjust,
-  limitingConeAngle, local, markerHeight, markerUnits, markerWidth,
-  maskContentUnits, maskUnits, mathematical, max, media, method, min, mode,
-  name, numOctaves, offset, operator, order, orient, orientation, origin,
-  overlinePosition, overlineThickness, panose1, path, pathLength,
+  capHeight, class, classList, clipPathUnits, contentScriptType
+  contentStyleType, cx, cy , d, decelerate, descent, diffuseConstant, divisor,
+  dur, dx, dy, edgeMode , elevation, end, exponent, externalResourcesRequired,
+  filterRes, filterUnits, format, from, fx, fy, g1, g2, glyphName, glyphRef,
+  gradientTransform, gradientUnits, hanging, height, horizAdvX, horizOriginX,
+  horizOriginY, id, ideographic, in_, in2, intercept, k, k1, k2, k3, k4,
+  kernelMatrix, kernelUnitLength, keyPoints, keySplines, keyTimes, lang,
+  lengthAdjust, limitingConeAngle, local, markerHeight, markerUnits,
+  markerWidth, maskContentUnits, maskUnits, mathematical, max, media, method,
+  min, mode, name, numOctaves, offset, operator, order, orient, orientation,
+  origin, overlinePosition, overlineThickness, panose1, path, pathLength,
   patternContentUnits, patternTransform, patternUnits, pointOrder, points,
   pointsAtX, pointsAtY, pointsAtZ, preserveAlpha, preserveAspectRatio,
   primitiveUnits, r, radius, refX, refY, renderingIntent, repeatCount,
@@ -229,6 +229,15 @@ capHeight =
 class : String -> Attribute msg
 class =
   Elm.Kernel.Svg.attribute "class"
+
+{-|-}
+classList : List ( String, Bool ) -> Attribute msg
+classList list =
+  list
+    |> List.filter Tuple.second
+    |> List.map Tuple.first
+    |> String.join " "
+    |> class
 
 
 {-|-}
