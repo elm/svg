@@ -6,7 +6,7 @@ module Svg.Attributes exposing
   , d, decelerate, descent, diffuseConstant, divisor, dur, dx, dy, edgeMode
   , elevation, end, exponent, externalResourcesRequired, filterRes, filterUnits
   , format, from, fx, fy, g1, g2, glyphName, glyphRef, gradientTransform
-  , gradientUnits, hanging, height, horizAdvX, horizOriginX, horizOriginY, id
+  , gradientUnits, hanging, height, horizAdvX, horizOriginX, horizOriginY, href, id
   , ideographic, in_, in2, intercept, k, k1, k2, k3, k4, kernelMatrix
   , kernelUnitLength, keyPoints, keySplines, keyTimes, lang, lengthAdjust
   , limitingConeAngle, local, markerHeight, markerUnits, markerWidth
@@ -52,7 +52,7 @@ module Svg.Attributes exposing
   d, decelerate, descent, diffuseConstant, divisor, dur, dx, dy, edgeMode,
   elevation, end, exponent, externalResourcesRequired, filterRes, filterUnits,
   format, from, fx, fy, g1, g2, glyphName, glyphRef, gradientTransform,
-  gradientUnits, hanging, height, horizAdvX, horizOriginX, horizOriginY, id,
+  gradientUnits, hanging, height, horizAdvX, horizOriginX, horizOriginY, href, id,
   ideographic, in_, in2, intercept, k, k1, k2, k3, k4, kernelMatrix,
   kernelUnitLength, keyPoints, keySplines, keyTimes, lang, lengthAdjust,
   limitingConeAngle, local, markerHeight, markerUnits, markerWidth,
@@ -440,6 +440,10 @@ horizOriginY : String -> Attribute msg
 horizOriginY =
   Elm.Kernel.VirtualDom.attribute "horiz-origin-y"
 
+{-|-}
+href : String -> Attribute msg
+href value =
+  Elm.Kernel.VirtualDom.attribute "href" (Elm.Kernel.VirtualDom.noJavaScriptUri value)
 
 {-|-}
 id : String -> Attribute msg
